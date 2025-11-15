@@ -35,7 +35,7 @@ const HeroSection = () => {
             Celebrate Every Curl
           </h1>
           <p className="text-lg md:text-xl text-white">
-            Amur brings you premium hair care tailored for Afro-textured beauty —
+            Amur brings you premium hair care tailored for Afro-textured beauty, 
             clean, nourishing, and made with intention.
           </p>
           <Link

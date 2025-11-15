@@ -7,7 +7,7 @@ const About = () => {
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 border-b pb-2">About Amur</h1>
 
-        {/* Image Section */}
+        
         <div className="mb-8">
           <img
             src={windowProducts}
@@ -24,9 +24,9 @@ const About = () => {
         </p>
 
         <p className="text-lg leading-7 mb-6">
-          We believe hair care is more than just routine — it's a form of
+          We believe hair care is more than just routine, it's a form of
           self-love. That’s why we source only the finest ingredients that work
-          in harmony with curls, coils, and kinks. Whether you're looking for
+          in harmony with curls and coils. Whether you're looking for
           hydration, definition, or protection, Amur has you covered.
         </p>
 
