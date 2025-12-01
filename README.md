@@ -194,7 +194,7 @@ Custom product renders
 
 👩🏾‍🦱 Target Audience
 
-People with curls, coils, and kinks
+People with curls and coils
 
 Those transitioning from chemical treatments
 
@@ -237,11 +237,11 @@ npm run build
 
 📁 Folder Structure (example)
 /src
-  /components
-  /pages
-  /context
   /assets
-  /data
+  /components
+  /context
+  /pages
+  /styles
   App.jsx
   main.jsx
 
