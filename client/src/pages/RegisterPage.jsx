@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../components/Modal";
+import { api } from "../api";
 
 const passwordRules = [
   { key: "len", test: (v) => v.length >= 8, label: "At least 8 characters" },
@@ -71,7 +71,7 @@ const RegisterPage = () => {
     if (!validate()) return;
 
     try {
-      await axios.post("/api/users/register", {
+      await api.post("/users/register", {
         name: formData.name,
         email: formData.email,
         password: formData.password,

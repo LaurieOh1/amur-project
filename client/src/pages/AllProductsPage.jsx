@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import axios from "axios";
+import { api } from "../api"; 
 
 const AllProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -12,7 +12,7 @@ const AllProductsPage = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const { data } = await axios.get("/api/products", {
+        const { data } = await api.get("/products", {
           params: {
             search: searchQuery || undefined,
           },

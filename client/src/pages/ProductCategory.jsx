@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+import { api } from "../api";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:5050";
 
@@ -22,7 +22,7 @@ export default function ProductCategory() {
         setErr("");
 
         const qs = `category=${encodeURIComponent(category)}&page=${page}&limit=12`;
-        const { data } = await axios.get(`${API}/api/products?${qs}`);
+        const { data } = await api.get(`/products?${qs}`);
         if (ignore) return;
 
         setProducts(data.products || []);

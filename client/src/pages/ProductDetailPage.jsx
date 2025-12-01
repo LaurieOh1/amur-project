@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { api
 
+ } from "../api";
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -11,7 +12,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const { data } = await axios.get(`/api/products/${id}`);
+        const { data } = await api.get(`/products/${id}`);
         setProduct(data);
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -35,8 +36,7 @@ const ProductDetailPage = () => {
     }
 
     try {
-      
-      await axios.post("/api/cart", {
+      await api.post("/cart", {
         productId: product._id,
         quantity: 1,
       });

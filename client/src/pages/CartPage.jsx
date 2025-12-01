@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { api } from "../api";     
 
 const CartPage = () => {
   const navigate = useNavigate();
@@ -9,9 +9,8 @@ const CartPage = () => {
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
 
-  // ---- Get userId (adjust to your auth flow) ----
-  useEffect(() => {
 
+  useEffect(() => {
     try {
       const stored = localStorage.getItem("userInfo");
       if (stored) {
@@ -25,7 +24,7 @@ const CartPage = () => {
     if (!uid) return;
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/cart/${uid}`);
+      const { data } = await api.get(`/cart/${uid}`);
       setCart(data);
       setErr("");
     } catch (e) {
@@ -47,11 +46,11 @@ const CartPage = () => {
     );
   }, [cart]);
 
-  // ---- Handlers ----
+  
   const updateQuantity = async (productId, nextQty) => {
     if (!userId || nextQty < 1) return;
     try {
-      const { data } = await axios.put(`/api/cart/${userId}`, {
+      const { data } = await api.put(`/cart/${userId}`, {
         productId,
         quantity: nextQty,
       });
@@ -70,9 +69,7 @@ const CartPage = () => {
 
   const removeItem = async (productId) => {
     try {
-      const { data } = await axios.delete(
-        `/api/cart/${userId}/item/${productId}`
-      );
+      const { data } = await api.delete(`/cart/${userId}/item/${productId}`);
       setCart(data);
     } catch (e) {
       setErr(e.response?.data?.message || "Failed to remove item");
@@ -81,7 +78,7 @@ const CartPage = () => {
 
   const clearCart = async () => {
     try {
-      await axios.delete(`/api/cart/${userId}`);
+      await api.delete(`/cart/${userId}`);
       setCart({ ...cart, items: [] });
     } catch (e) {
       setErr(e.response?.data?.message || "Failed to clear cart");

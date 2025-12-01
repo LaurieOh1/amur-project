@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
+import { api } from "../api";
 
 export default function SearchResults() {
   const { search } = useLocation();
@@ -12,9 +12,7 @@ export default function SearchResults() {
     if (!query) return;
 
     const load = async () => {
-      const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/products?search=${query}`
-      );
+      const res = await api.get(`/products?search=${query}`);
       setProducts(res.data);
     };
 

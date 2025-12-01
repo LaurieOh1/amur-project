@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { api } from "../api";
 
 const initialForm = { name: "", email: "", subject: "", message: "", hp: "" };
 
@@ -37,7 +37,7 @@ const ContactPage = () => {
     try {
       setStatus({ loading: true, ok: false, msg: "" });
 
-      await axios.post("/api/contact", {
+      await api.post("/contact", {
         name: form.name.trim(),
         email: form.email.trim(),
         subject: form.subject.trim(),

@@ -15,20 +15,18 @@ const HeroSection = () => {
 
   return (
     <section className="hero-parallax">
-      {/* Background layer */}
+
       <div
         className="hero-bg"
         style={{
           backgroundImage: `url(${heroImage})`,
-          // Mobile fallback: move bg slightly with scroll (parallax feel)
+
           transform: `translateY(${offsetY * 0.2}px)`,
         }}
       />
 
-      {/* Dark overlay */}
       <div className="hero-overlay" />
 
-      {/* Content */}
       <div className="hero-content">
         <div className="text-center max-w-xl px-6 space-y-6">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white">

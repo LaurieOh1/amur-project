@@ -70,7 +70,6 @@ const GridMotion = ({ items = [], gradientColor = 'white' }) => {
                 const idx = rowIndex * 7 + itemIndex;
                 const content = combinedItems[idx];
 
-                // 1) JSX passed in -> render as-is
                 if (content && typeof content === 'object' && 'type' in content) {
                   return (
                     <div key={`jsx-${rowIndex}-${itemIndex}`} className="relative">
@@ -81,7 +80,7 @@ const GridMotion = ({ items = [], gradientColor = 'white' }) => {
                   );
                 }
 
-                // 2) Image-like string (imported url or public path)
+             
                 if (isImageLike(content)) {
                   return (
                     <div key={`img-${rowIndex}-${itemIndex}`} className="relative">
