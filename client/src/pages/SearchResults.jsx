@@ -12,7 +12,7 @@ export default function SearchResults() {
     if (!query) return;
 
     const load = async () => {
-      const res = await api.get(`/products?search=${query}`);
+      const res = await api.get(`/api/products?search=${query}`);
       setProducts(res.data);
     };
 

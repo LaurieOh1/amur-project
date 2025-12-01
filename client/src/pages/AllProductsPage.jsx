@@ -12,7 +12,7 @@ const AllProductsPage = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const { data } = await api.get("/products", {
+        const { data } = await api.get("/api/products", {
           params: {
             search: searchQuery || undefined,
           },

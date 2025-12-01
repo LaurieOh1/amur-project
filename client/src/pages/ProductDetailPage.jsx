@@ -12,7 +12,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const { data } = await api.get(`/products/${id}`);
+        const { data } = await api.get(`api/products/${id}`);
         setProduct(data);
       } catch (error) {
         console.error("Error fetching product:", error);

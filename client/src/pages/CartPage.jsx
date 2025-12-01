@@ -24,7 +24,7 @@ const CartPage = () => {
     if (!uid) return;
     try {
       setLoading(true);
-      const { data } = await api.get(`/cart/${uid}`);
+      const { data } = await api.get(`/api/cart/${uid}`);
       setCart(data);
       setErr("");
     } catch (e) {

@@ -22,7 +22,7 @@ export default function ProductCategory() {
         setErr("");
 
         const qs = `category=${encodeURIComponent(category)}&page=${page}&limit=12`;
-        const { data } = await api.get(`/products?${qs}`);
+        const { data } = await api.get(`api/products?${qs}`);
         if (ignore) return;
 
         setProducts(data.products || []);

@@ -5,7 +5,6 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import { api } from "../api";
 
 const BestSellerCarousel = () => {
@@ -14,7 +13,7 @@ const BestSellerCarousel = () => {
   useEffect(() => {
     const fetchBestSellers = async () => {
       try {
-        const { data: responseData } = await api.get("/products/featured");
+        const { data: responseData } = await api.get("api/products/featured");
 
         console.log("Best sellers API response:", responseData);
         console.log("Best sellers state:", products);

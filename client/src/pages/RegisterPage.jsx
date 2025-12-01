@@ -71,7 +71,7 @@ const RegisterPage = () => {
     if (!validate()) return;
 
     try {
-      await api.post("/users/register", {
+      await api.post("/api/users/register", {
         name: formData.name,
         email: formData.email,
         password: formData.password,

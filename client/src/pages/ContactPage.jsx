@@ -37,7 +37,7 @@ const ContactPage = () => {
     try {
       setStatus({ loading: true, ok: false, msg: "" });
 
-      await api.post("/contact", {
+      await api.post("/api/contact", {
         name: form.name.trim(),
         email: form.email.trim(),
         subject: form.subject.trim(),

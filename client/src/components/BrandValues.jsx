@@ -1,5 +1,4 @@
 import React from "react";
-
 import valueImage1 from "../assets/brandValues/natural-oil.png";
 import valueImage2 from "../assets/brandValues/environment.png";
 import valueImage3 from "../assets/brandValues/noHarshChimicals.png";
