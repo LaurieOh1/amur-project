@@ -235,7 +235,7 @@ npm run dev
 # Build for production
 npm run build
 
-📁 Folder Structure (example)
+📁 Folder Structure 
 /src
   /assets
   /components
